@@ -329,6 +329,7 @@ extern "C" {
         GGML_OP_NEG,
         GGML_OP_STEP,
         GGML_OP_TANH,
+        GGML_OP_ERF,
         GGML_OP_ELU,
         GGML_OP_RELU,
         GGML_OP_GELU,
@@ -772,6 +773,14 @@ extern "C" {
             struct ggml_tensor  * a);
 
     GGML_API struct ggml_tensor * ggml_tanh_inplace(
+            struct ggml_context * ctx,
+            struct ggml_tensor  * a);
+
+    GGML_API struct ggml_tensor * ggml_erf(
+            struct ggml_context * ctx,
+            struct ggml_tensor  * a);
+
+    GGML_API struct ggml_tensor * ggml_erf_inplace(
             struct ggml_context * ctx,
             struct ggml_tensor  * a);
 
